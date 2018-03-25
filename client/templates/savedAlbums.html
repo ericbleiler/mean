@@ -1,0 +1,14 @@
+
+<div id="back"></div>
+<div ng-init="savedAlbums()">
+
+<br><br><h1>Albums</h1>
+		<div class="flex-container">
+     		<div class="flex-content" ng-repeat="a in savedAlbums">
+          		<a href="#/employees/music/{{a.name}}/album"><img src="images/{{a.name}}.jpg">
+					{{a.name}}</div></a>
+    	</div>
+
+</div>
+
+	

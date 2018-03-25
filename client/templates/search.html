@@ -1,0 +1,30 @@
+<div ng-init="artist()">
+
+<div class="artistImage">
+
+
+	<br><h1><div class="head-h1">Artists</div></h1><br><br>
+		<div class="flex-container">
+     		<div class="flex-content" >
+          		<a href="#/employees/{{artists.artist}}/artist"><img src="images/{{artists.artist}}.jpg">
+					{{artists.artist}}</div></a>
+    	</div>
+
+
+
+
+		
+  <br><h1><div class="head-h1">Albums</div></h1><br><br>
+		<div class="flex-container">
+     		<div class="flex-content" ng-repeat="album in albums">
+          		<a href="#/employees/music/{{album.name}}/album"><img src="images/{{album.name}}.jpg">
+					{{album.name}}</div></a>
+    	</div>
+ 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

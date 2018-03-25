@@ -1,0 +1,36 @@
+
+
+
+    <div class="form-style-8">
+
+<h2 class="page-header">Add New Type</h2>
+  <div class="panel-heading">
+    
+  </div>
+  <div class="form-group">
+  <div class="panel-body">
+    <form ng-submit="addType()">
+    <div class="form-group">
+      <div class="styled-select red semi-square">
+            <select>
+                <option>Choose Type</option>
+                <option>Genres</option>                     
+                <option>Charts</option>               
+          
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="text" class="form-control" id="image" placeholder="Nmage" ng-model="music.image">
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="music.name">
+    </div>
+   
+    </div>
+    <button type="submit" style="color:#5bc0de;" class="btn btn-default">Save</button>
+    <a href="#/employees" class="btn btn-default"> Cancel</a>
+</form>   
+    <div>

@@ -1,0 +1,85 @@
+
+db.radio.insert({name : "Ambitionary" , album : "Life Cycles", artist : "The Word Alive", length : "3:00"});
+db.radio.insert({name : "The Wretched" , album : "Deceiver", artist : "The Word Alive", length : "3:00"});
+db.radio.insert({name : "Dreamer" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+
+use music
+db.music.insert({name : "Dreamer" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : "Sellout" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : "Insane" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : “Made this Way” , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : "Suffocating" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : “Piece of Me“ , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : "Branded" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : "Grunge" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : “Dark Matter“ , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.music.insert({name : “Oxy“ , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+
+
+use queue
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+db.queue.insert({name : "All Star" , album : "Astro Lunge", artist : "Smash Mouth", length : "3:00"});
+
+
+use artists
+db.albums.insert({artist : "The Word Alive"});
+
+use albums
+db.albums.insert({name : "Dark Matter", artist : "The Word Alive"});
+db.albums.insert({name : "Real", artist : "The Word Alive"});
+db.albums.insert({name : "Life Cycles", artist : "The Word Alive"});
+db.albums.insert({name : "Deceiver", artist : "The Word Alive"});
+
+use genres
+db.genres.insert({image : "images/blues.png", name : "blues"});
+db.genres.insert({image : "images/rap.png", name : "rap"});
+db.genres.insert({image : "images/rock.png", name : "rock"});
+db.genres.insert({image : "images/pop.png", name : "pop"});
+
+use charts
+db.charts.insert({image : "images/United States.png", name : "United States"});
+db.charts.insert({image : "images/worldwide.png", name : "Worldwide"});
+
+use artistComments
+db.artistComments.insert({user : "user", comment : "comment"});
+
+use songs
+db.songs.insert({name : "Made this Way" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.songs.insert({name : "Suffocating" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.songs.insert({name : "Trapped" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.songs.insert({name : "Grunge" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+db.songs.insert({name : "Dark Matter" , album : "Dark Matter", artist : "The Word Alive", length : "3:00"});
+
+use related
+db.related.insert({artist:"The Word Alive", related1: "blessthefall", related2: "Miss May I", related3: "Memphis May Fire", related4: "Motionless in White", related5: "In Fear and Faith"});
+
+
+use songs
+db.songs.insert({name : "All Star" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+
+use music
+db.music.insert({name : "Who's There" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Diggin' Your Scene" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "I Just Wanna See" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Waste" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "All Star" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Satellite" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Radio" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Stoned" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "When the Morning Comes" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+db.music.insert({name : "Road Man" , album : "Astro Lounge", artist : "Smash Mouth", length : "3:00"});
+
+
+use artists
+db.artists.insert({artist : "The Word Alive"});
+db.artists.insert({artist : "Smash Mouth"});
+
+use albums
+db.albums.insert({name : "Fush Yu Mang", artist : "Smash Mouth"});
+db.albums.insert({name : "Astro Lounge", artist : "Smash Mouth"});
+db.albums.insert({name : "Get the Picture", artist : "Smash Mouth"});

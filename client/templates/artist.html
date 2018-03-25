@@ -1,0 +1,156 @@
+<div ng-init="artist()">
+
+<div class="artistImage">
+
+	<div class="img"><img src="images/{{artists.artist}}.jpg"></div></div>
+	<div class="artistText">{{artists.artist}}		
+</div>
+<div class="artistInfo">
+
+ <a ng-click="addArtist()" class="button-add" id="save">Save Artist </a>
+		<h3><div class="aText">Artist Rating :</div></h3>
+<div id="star"></div>
+	<input type="hidden"  class="form-control" id="user" value="user"/>
+	<input type="hidden"  class="form-control" id="artist" value="{{artists.artist}}"/>
+	
+<br><br><br><br>
+	 
+<div class="marginText">
+	 <a ng-click="addQueue()" class="button-add" id="margin">queue </a>
+
+	     <a href="#/employees/{{artists.artist}}/radio" class="button">Start Radio</a>
+
+				<input type="hidden"  id="field" value="{{savedArtists.artist}}"/>
+ <button onclick="checkTextField()" class="button-add" >Check</button>
+
+  <h1><div class="color">Popular </div></div></h1>
+
+		<table>
+			<thead>
+			<tr>
+			  <th></th>
+			  <th><div class="head-h2"><div class="color">Song</div></div></th>
+			  <th><div class="head-h2"><div class="color">Album</div></div></th>
+			  <th><div class="head-h2"><div class="color">Length</div></div></th>
+			  <th></th>
+			  <th><div class="head-h2"><div class="color">Add</div></div></th>
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="t in songs">
+			 	<form>
+            		<td> <i id="pButton" class="material-icons" onclick="getMusic()"><div class="color">play_arrow</div></i> </td>
+				</form>
+			  <td><a href="#/employees/music/{{t.album}}/album"><div class="songs">{{ t.name }}</div></td>
+			  <td><a href="#/employees/music/{{t.album}}/album"><div class="album">{{ t.album }}</div></a></td>
+			  <td><div class="length">{{ t.length }}</td>
+			  <td> 
+  					<form >
+    					<select >
+    					  		<div ng-controller="empController">    	
+
+      						 <option>Playlist</option>
+
+           				 	<option  ng-model="employee.playlist" ng-repeat="play in playlists">{{play.playlist}}
+    						</option>
+     						 </div>
+    					</select>
+  					</form>
+          	  </td>
+          	  			 
+          			<td>
+
+			  			<a href="#/employees/{{m.playlist}}/add" class="btn btn-info"> Add </a>
+
+			  			 <div id="hidden"><td><div class="artist">{{ t.artist }}</div></td></div>
+
+			  		</td>
+			</tr>
+			</tbody>
+		</table>
+		
+  <h1><div class="color">Albums</div></div></h1>
+    <hr>
+
+		<div class="flex-container">
+     		<div class="flex-content-album" ng-repeat="album in albums">
+          		<a href="#/employees/music/{{album.name}}/album"><img src="images/{{album.name}}.jpg">
+					<div class="flex-artist-font">{{album.name}}</div></div></a>
+    	</div>
+  <h1><div class="color">Related </div></div></h1>
+    <hr>
+
+
+    	<div class="flex-container">
+     		<div class="flex-content-album">
+          		<a href="#/employees/{{related.related1}}/artist"><img src="images/{{related.related1}}.jpeg">	<div class="flex-artist-font">{{related.related1}}</div>
+          	</div></a>
+    		<div class="flex-content-album">
+          		<a href="#/employees/{{related.related2}}/artist"><img src="images/{{related.related2}}.jpeg">	<div class="flex-artist-font">{{related.related2}}</div>
+          	</div></a>
+    		<div class="flex-content-album">
+          		<a href="#/employees/{{related.related3}}/artist"><img src="images/{{related.related3}}.jpeg">	<div class="flex-artist-font">{{related.related3}}</div>
+          	</div></a>
+    		<div class="flex-content-album">
+          		<a href="#/employees/{{related.related4}}/artist"><img src="images/{{related.related4}}.jpeg">	<div class="flex-artist-font">{{related.related4}}</div>
+          	</div></a>
+    		<div class="flex-content-album">
+          		<a href="#/employees/{{related.related5}}/artist"><img src="images/{{related.related5}}.jpeg">	<div class="flex-artist-font">{{related.related5}}</div>
+          	</div></a>
+ 	</div>   
+</div>
+  <h1><div class="head-h1"><div class="color">Comments</div></div></h1>
+    <hr>
+
+	<div class="flex-container-comments">
+		<div class="flex-comments" ng-repeat="Comment in Comments">	
+			<h4>{{Comment.comment}}</h4>
+		</div>
+	</div>
+	<div class="form-style-1">
+
+<h2 class="page-header">Add Comment</h2>
+
+	
+  <div class="form-group">
+	<div class="panel-body">
+		<form ng-submit="addArtistComment(artists.artist, artistComments.user, artistComments.comment)">
+   
+    <div class="form-group">
+      <label for="album"><span><h4>Comment:</h4></span></label>
+      <input type="text" class="form-control" id="comment" placeholder="Comment" ng-model="artistComments.comment">
+    </div>
+    <div class="form-group">
+      <input type="hidden" style="visibility:none" class="form-control" id="artistName" placeholder="artists.artist" ng-model="artists.artist">
+    </div>
+    <div id="artistName" ng-model="artists.artist"></div>
+    
+    <input type="submit" style="color:#5bc0de;" class="btn btn-default" />
+</form>		
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script>
+	
+function checkTextField() {
+		
+ var field = document.getElementById('field').value; 
+
+	if(field != "undefined"){
+		document.getElementById('margin').style.visibility = 'hidden';
+		
+	}
+}
+
+</script>

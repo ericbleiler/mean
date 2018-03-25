@@ -1,0 +1,52 @@
+
+<button class="button" onclick="getMusic()" id="radio">Start Radio</button>
+
+<div id="flex-container">
+<div id="flex-content-larger"><img itemprop="photo" id="data"   /></div>
+
+<div id="hidden1">
+	<div class="left"><img itemprop="photo" id="leftImage" src="images/Real.jpg"  onclick="decreaseIndex()"/></div>
+	</div>
+	<div id="hidden">
+
+	<div class="right"><img itemprop="photo" id="rightImage" src="images/Real.jpg"  onclick="decreaseIndex()"/></div>
+</div>
+
+
+</div>
+<br><br><br><br>
+<div id="back"></div>
+<div ng-init="radio()">
+
+
+<div id="queue">
+<table>
+			<thead>
+			<tr>		
+		
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="r in radio">
+			 <form>
+             </form>
+        		
+
+			  <td><input type="hidden" class="form-control" id="name"  ng-model="r.song" value="{{ r.song }}"/><div class="songs">{{ r.song }}</td>
+			  <td><input type="hidden" class="form-control" id="album"  ng-model="r.album" value="{{ r.album }}"/><div class="album">{{ r.album }}</td>
+			   <td><input type="hidden" class="form-control" id="artist"  ng-model="r.artist" value="{{ r.artist }}"/><div class="artist">{{ r.artist }}</td>
+			  
+			 
+          			
+			</tr>
+			</tbody>
+		</table>	
+</div>
+</div>
+  <img id = "current" />
+  <div id="currentSong"></div>
+  <div id="currentAlbum"></div>
+  <div id="currentArtist"></div>
+  <br><br><br>
+

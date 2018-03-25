@@ -1,0 +1,34 @@
+
+
+<div ng-init="playlist()">
+
+			
+
+		<table >
+			<thead>
+			<tr>
+			  <th>Song</th>
+			  <th>Album</th>
+			  <th>Artist</th>
+			  <th>Length</th>
+			  <th>Delete</th>
+
+
+			</tr>
+			</thead>
+			<tbody>
+				
+
+			<tr ng-repeat="employee in employees">
+			  <td><div class="songs">{{ employee.name }}</div></td>
+			  <td><div class="album"><a href="#/employees/music/{{employee.album}}/album">{{ employee.album }}</a></td>
+			  <td><div class="artist"><a href="#/employees/{{employee.artist}}/artist">{{ employee.artist }}</a></td>
+			  <td><div class="length">{{ employee.length }}</div></td>
+			  <td> 
+			  	 	<a ng-click="delete(employee._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Delete </a>
+			  </td>
+			</tr>
+			</tbody>
+		</table>		
+    <div>
+<div>

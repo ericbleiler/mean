@@ -1,0 +1,465 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+
+<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/sidebar-menu.css">
+
+<link href="css/select.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="icon" type="image/png" href="/images/logo.png" />
+
+
+</head>
+
+
+<body onload="onload()">
+
+        <nav>
+         <div class="nav-wrapper grey darken-3">
+            <a href="#/" class="brand-logo center">
+                <div class="icon"><img src="/images/logo.png" class="responsive-img" ></div>
+            </a>
+           <ul id="slide-out" class="side-nav">
+             <!--<img src="images/{{user.username}}.jpg" height='50' width='50'>-->
+              <div class="userView">
+                <div class="background">
+                </div>
+                
+             
+              </div>
+
+
+    <ul class="sidebar-menu">
+    <li><img src="/images/{{user.username}}.jpg" height='50' width='50'></li>
+    <li><a href="/users/logout"><div class="color">Logout</div></a></li>
+        <li>
+
+        <a href="index.html#/">
+           <i class="fa fa-files-o"></i> <span><div class="color">Home</div></span> 
+        </a>
+    </li>
+      <li>
+        <a href="#">
+           <i class="fa fa-files-o"></i> <span><div class="color">Playlists</div></span> 
+        </a>
+
+        <ul class="sidebar-submenu" style="display: none;">
+          <div ng-controller="empController">
+            <li ng-repeat="play in playlists" class="sidelist">
+                <a href="#/employees/{{play.playlist}}/playlist"><i class="fa fa-circle-o"></i><div class="color">{{play.playlist}}</div></a>
+            </li>
+          </div>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span> <div class="color">Your Music</div></span>
+        </a>
+        <ul class="sidebar-submenu" style="display: none;">
+          <li>
+                <a href="#/employees/username/savedAlbums"><i class="fa fa-circle-o"></i><div class="color">Albums</div></a>
+          </li>
+          <li>
+                <a href="#/employees/username/savedArtists"><i class="fa fa-circle-o"></i><div class="color">Artists</div></a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span> <div class="color">Add</div></span>
+        </a>
+        <ul class="sidebar-submenu" style="display: none;">
+         
+          <li role="presentation"><a href="#/employees/create"> <div class="color">Add New</div> </a></li>  
+          <li role="presentation"><a href="#/employees/createMusic"> <div class="color">Add Music </div></a></li> 
+          <li role="presentation"><a href="#/employees/createAlbum"> <div class="color">Add Album </div></a></li> 
+          <li role="presentation"><a href="#/employees/createArtist"> <div class="color">Add Artist </div></a></li> 
+          <li role="presentation"><a href="#/employees/createGenre"> <div class="color">Add Genre </div></a></li>       
+          <li role="presentation"><a href="#/employees/createChart"> <div class="color">Add Chart </div></a></li> 
+          <li role="presentation"><a href="#/employees/createPlaylist"> <div class="color">Add Playlist </div></a></li> 
+
+
+          </li>
+         
+        </ul>
+
+      </li>
+       
+    </ul>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+             <div class="input-field right">
+               <input id="search" type="search" required>
+
+               <input type="submit" style="color:#5bc0de;" class="btn btn-default" onclick="search()">
+                <label class="label-icon" for="search"><i class="material-icons right" >search</i></label>   
+
+               <i class="material-icons">close</i>
+             </div>
+         </div>
+       </nav>
+
+
+
+
+
+<div id='content'>
+  <article>
+
+
+
+<!--
+
+  <div id="nav">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">Charts</a></li>
+        <li><a href="#contact">New</a></li>
+        <li><a href="#about">Genres</a></li>
+      </ul>
+    </div>
+-->
+
+  
+  <div class="row">
+    <div class="header clearfix">
+      
+    </div>
+    <div ng-view></div>
+    
+    
+
+  </div>
+      
+  
+  </article>
+
+   </div>
+      <div id="bottom" class="grey darken-3"> 
+
+          <audio id="music" preload="false">
+            <source src="">
+          </audio>
+        <div id="audioplayer">
+        <div class="playButtons">
+            <a href="#/employees/queue"><i class="medium material-icons">queue_music</i></a> 
+
+          <i id="bButton" class="medium material-icons">fast_rewind</i> 
+          <i id="pButton" class="medium material-icons"><div id="play">play_arrow</div></i> 
+          <i id="nButton" class="medium material-icons">fast_forward</i>
+                            <img id = "cover" />
+
+        </div>
+        <div id="timeline">
+            <div id="playhead"></div>
+            </div>
+         </div>  
+
+
+  <div class="flex-container">
+
+    <div class="flex-side">
+        
+</div>
+
+      <li >
+
+        <div class="imageContainer">
+      </div>
+
+      </li>
+    </div>
+   
+      <div class="flex-side">
+        <li class="flex-side-item" id="song"></li>
+        <li class="flex-side-item" id="album"></li>
+        <li class="flex-side-item" id="artist"></li>
+     </div>
+  </div>
+  </section>
+  
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="js/sidebar-menu.js"></script>
+<script src="js/classie.js"></script>
+    <script src="js/uisearch.js"></script>
+    <script>
+      new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
+  <script>
+    $.sidebarMenu($('.sidebar-menu'))
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="controllers/controllers.js"></script>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script type="text/javascript" src="js/init.js"></script>
+          <script type="text/javascript" src="js/sidebar.js"></script>
+
+<script src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/player.js"></script> 
+
+</body>
+</html>
+
+
+<script>
+function onload(){ 
+   var t = document.getElementsByClassName("artistName");
+    for(var i = 0; i < t.length; i++){
+    	
+    }    
+     
+}
+function search(){
+ var search = document.getElementById('search').value; 
+ var searchString = "";
+ for (var i = 0; i < search.length; i++) {
+     if(search[i] != " "){
+        searchString += search[i];
+     }else{
+         searchString += "%20";
+     }
+}
+  window.location = "https://webserveradmin-ericbleiler.c9users.io/index.html#/employees/" + searchString + "/search";
+}
+
+
+var songs = [];
+var albums = [];
+var artists = [];
+var index = -1;
+
+
+function getMusic(){
+
+var song = document.getElementsByClassName("songs"); 
+var album = document.getElementsByClassName("album"); 
+var artist = document.getElementsByClassName("artist"); 
+
+
+  for(var i=0; i<song.length; i++){
+      songs.push(song[i].innerHTML);     
+      albums.push(album[i].innerHTML);    
+      artists.push(artist[i].innerHTML);
+  }
+
+  for(var i=0; i<songs.length; i++){
+  }
+  next();
+}
+
+$(window).scroll(function(){
+  $("#follow").stop().animate({"marginTop": ($(window).scrollTop()) + "px"}, "slow" );
+});
+
+var music = document.getElementById('music'); // id for audio element
+var duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
+var pButton = document.getElementById('pButton'); // play button
+var nButton = document.getElementById('nButton'); // play button
+var bButton = document.getElementById('bButton'); // play button
+
+var playhead = document.getElementById('playhead'); // playhead
+var timeline = document.getElementById('timeline'); // timeline
+
+var current = document.getElementById('current');
+
+var cover = document.getElementById('cover');
+var song = document.getElementById('song');
+var album = document.getElementById('album');
+var artist = document.getElementById('artist');
+
+// timeline width adjusted for playhead
+var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+// play button event listenter
+nButton.addEventListener("click", next);
+
+pButton.addEventListener("click", play);
+nButton.addEventListener("click", next);
+bButton.addEventListener("click", back);
+
+// timeupdate event listener
+music.addEventListener("timeupdate", timeUpdate, false);
+
+// makes timeline clickable
+timeline.addEventListener("click", function(event) {
+    moveplayhead(event);
+    music.currentTime = duration * clickPercent(event);
+}, false);
+
+// returns click as decimal (.77) of the total timelineWidth
+function clickPercent(event) {
+    return (event.clientX - getPosition(timeline)) / timelineWidth;
+}
+
+// makes playhead draggable
+playhead.addEventListener('mousedown', mouseDown, false);
+window.addEventListener('mouseup', mouseUp, false);
+
+// Boolean value so that audio position is updated only when the playhead is released
+var onplayhead = false;
+
+// mouseDown EventListener
+function mouseDown() {
+    onplayhead = true;
+    window.addEventListener('mousemove', moveplayhead, true);
+    music.removeEventListener('timeupdate', timeUpdate, false);
+}
+
+// mouseUp EventListener
+// getting input from all mouse clicks
+function mouseUp(event) {
+    if (onplayhead == true) {
+        moveplayhead(event);
+        window.removeEventListener('mousemove', moveplayhead, true);
+        // change current time
+        music.currentTime = duration * clickPercent(event);
+        music.addEventListener('timeupdate', timeUpdate, false);
+    }
+    onplayhead = false;
+}
+// mousemove EventListener
+// Moves playhead as user drags
+function moveplayhead(event) {
+    var newMargLeft = event.clientX - getPosition(timeline);
+
+    if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+        playhead.style.marginLeft = newMargLeft + "px";
+    }
+    if (newMargLeft < 0) {
+        playhead.style.marginLeft = "0px";
+    }
+    if (newMargLeft > timelineWidth) {
+        playhead.style.marginLeft = timelineWidth + "px";
+    }
+}
+
+// timeUpdate
+// Synchronizes playhead position with current point in audio
+function timeUpdate() {
+    var playPercent = timelineWidth * (music.currentTime / duration);
+    playhead.style.marginLeft = playPercent + "px";
+    if (music.currentTime == duration) {
+        pButton.className = "";
+        next()
+    }
+}
+function next() {
+    var pButton = document.getElementById("play");
+    pButton.innerHTML = "pause";
+    var pButton1 = document.getElementById("play");
+    pButton1.innerHTML = "pause";
+    if(albums[index + 1] != "undefined"){
+        index++;
+    
+    music.pause();
+    music.currentTime = 0;
+    music.src = "mp3/" + songs[index] + ".mp3";
+    cover.src = "images/" + albums[index] + ".jpg";
+    song.innerHTML = songs[index];
+    album.innerHTML = albums[index];
+    artist.innerHTML = artists[index];
+    music.load(); 
+    music.play();      
+    }
+    var leftImage = document.getElementById("leftImage");
+    //var leftImage1 = document.getElementById("leftImage1");
+
+    var rightImage = document.getElementById("rightImage");
+    //var rightImage1 = document.getElementById("rightImage1");
+
+    var currentImage = document.getElementById("data");
+
+    
+    if(index > 0){
+        rightImage.src = "images/" + albums[index - 1] + ".jpg";    
+        document.getElementById("hidden").style.display = "inline";
+    }
+  
+    for (var i = 0; i < album.length; i++){
+        document.getElementById("queue").innerHTML += "<tr><td>" + songs[i] + "</td><td>" + albums[i] + "</td><td>" + artists[i] + "</td></tr>";
+    }
+ 
+  currentImage.src = "images/" + albums[index] + ".jpg";
+}
+function back() {
+    if(index > 0){
+         index--;
+         music.pause();
+         music.currentTime = 0;
+         music.src = "mp3/" + songs[index] + ".mp3";
+         cover.src = "images/" + albums[index] + ".jpg";
+         song.innerHTML = songs[index];
+         album.innerHTML = albums[index];
+         artist.innerHTML = artists[index];
+         music.load(); 
+         music.play();
+      }
+    var leftImage = document.getElementById("leftImage");
+
+    var rightImage = document.getElementById("rightImage");
+
+    var currentImage = document.getElementById("data");
+
+    
+    if(index > 0){
+        rightImage.src = "images/" + albums[index - 1] + ".jpg";    
+        document.getElementById("hidden").style.display = "inline";
+    }
+  
+    for (var i = 0; i < album.length; i++){
+        document.getElementById("queue").innerHTML += "<tr><td>" + songs[i] + "</td><td>" + albums[i] + "</td><td>" + artists[i] + "</td></tr>";
+    }
+ 
+  currentImage.src = "images/" + albums[index] + ".jpg";
+}
+//Play and Pause
+function play() {
+    // start music
+    if (music.paused) {
+        music.play();
+        // remove play, add pause
+       // pButton.className = "pause";
+    } else { // pause music
+        music.pause();
+        // remove pause, add play
+        pButton.className = "play";
+    }
+    
+     
+}
+
+// Gets audio file duration
+music.addEventListener("canplaythrough", function() {
+    duration = music.duration;
+}, false);
+
+// getPosition
+// Returns elements left position relative to top-left of viewport
+function getPosition(el) {
+    return el.getBoundingClientRect().left;
+}
+
+</script>
+
+
+

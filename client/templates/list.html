@@ -1,0 +1,85 @@
+<div  ng-init="get()">
+
+<div id='main'>
+  <article>
+
+  <h1><div class="head-h1">Genres</div></h1>
+  <hr>
+    <div class="flex-container">
+     <div class="flex-content" ng-repeat="g in genres">
+          <img src={{g.image}} ><div class="flex-font">{{g.name}}</div></div>
+    </div>
+  <h1><div class="head-h1">Charts</div></h1>
+    <hr>
+
+   <div class="flex-container">
+     <div class="flex-charts" ng-repeat="c in charts">
+          <img src={{c.image}}><div class="flex-chart-fonts">{{c.name}}</div></div>
+      </div>
+   
+
+<div class="table">
+	<form ng-submit="add()">
+		<table >
+			<thead>
+			<tr>
+			  <th></th>
+			  <th>Song</th>
+			  <th>Album</th>
+			  <th>Artist</th>
+			  <th>Length</th>
+			  <th>Playlist</th>
+			  <th>Add To</th>
+			  <th></th>		
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="employee in employees">
+				 <form>
+            		<td> <i id="pButton" class="material-icons" onclick="getMusic()">play_arrow</i> </td>
+
+        		</form>
+
+			  <td><div class="songs">{{ employee.name }}</div></td>
+			  <td><a href="#/employees/music/{{employee.album}}/album"><div class="album">{{ employee.album }}</div></a></td>
+			  <td><a href="#/employees/{{employee.artist}}/artist"><div class="artist">{{ employee.artist }}</div></a></td>
+			  <td><div class="length">{{ employee.length }}</td>
+			  <td><a href="#/employees/{{employee.playlist}}/playlist">{{ employee.playlist }}</a></td>
+
+        
+
+			  <td> 
+			  <section>
+  					<form class="form-horizontal">
+    					<select class="form-control">
+    					  						<div ng-controller="empController">    	
+
+      						<option>Playlist</option>
+
+           				 	<option  ng-model="employee.playlist" ng-repeat="play in playlists" class="sidelist">{{play.playlist}}
+    						</option>
+     						 </div>
+    					</select>
+  					</form>
+				</section>
+			     
+          	  </td>
+          				    <!--<a href="#/employees/{{employee.playlist}}/show" class="btn btn-info"> Show  </a>-->
+          				    <td>
+          			<!--<a href="#/employees/{{employee.artist}}/artist" class="btn btn-info"> Artist </a>-->
+
+					<input type="submit" class="btn btn-info" value="Add"/>			  		<!--<a href="#/employees/{{employee._id}}/edit" class="btn btn-danger"> </span> Edit </a>-->
+
+			  		<a ng-click="delete(employee._id)" class="btn btn-danger"> </span> Delete </a>
+			  	</td>
+			</tr>
+			</tbody>
+		</table>		
+	</form>
+
+	
+<br>
+<br>
+<br>
+<br>

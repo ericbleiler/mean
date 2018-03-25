@@ -1,0 +1,47 @@
+
+
+<div ng-init="p()">
+	
+		<table >
+			<thead>
+			<tr>
+			  <th>Song</th>
+			  <th>Album</th>
+			  <th>Artist</th>
+			  <th>Length</th>
+			  <th>Playlist</th>
+			  <th></th>
+			  <th></th>
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="employee in employees">
+			  <td><div class="songs">{{ employee.name }}</div></td>
+			  <td><div class="album">{{ employee.album }}</td>
+			  <td><div class="artist">{{ employee.artist }}</td>
+			  <td>{{ employee.length }}</td>
+			  <td>{{ employee.playlist }}</td>
+			  <td> 
+			     <div class="styled-select red semi-square">
+  					<select>
+  						<div ng-controller="empController">    	
+  							<option>Playlist</option>
+
+           				 	<option ng-repeat="play in playlists">{{play.playlist}}
+    						</option>
+    					</div>
+    				</select>
+				</div>
+          	  </td>
+			  <td> 
+			    
+			 
+			  	<a href="#/employees/{{employee.playlist}}/add" class="btn btn-info"> Add </a>
+			  	 	<a ng-click="delete(employee._id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Delete </a>
+			  </td>
+			</tr>
+			</tbody>
+		</table>		
+    <div>
+<div>

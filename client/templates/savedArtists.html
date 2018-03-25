@@ -1,0 +1,14 @@
+<div id="back"></div>
+<div ng-init="savedArtists()">
+
+<br><br><h1>Artists</h1>
+		<div class="flex-container">
+     		<div class="flex-content" ng-repeat="a in savedArtists">
+          		<div class="saved"><a href="#/employees/{{a.artist}}/artist"><img src="images/{{a.artist}}.jpg">
+					<div class="artistName">{{a.artist}}</div></div></a>
+			</div>
+    	</div>
+
+</div>
+
+

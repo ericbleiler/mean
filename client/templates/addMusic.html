@@ -1,0 +1,34 @@
+
+
+  <div class="form-style-8">
+
+<h2 class="page-header">Add</h2>
+	<div class="panel-heading">
+	  
+	</div>
+  <div class="form-group">
+	<div class="panel-body">
+		<form ng-submit="addMusic()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" ng-model="music.name">
+    </div>
+    <div class="form-group">
+      <label for="album">Album:</label>
+      <input type="text" class="form-control" id="album" placeholder="Album" ng-model="music.album">
+    </div>
+    <div class="form-group">
+      <label for="artist">Artist:</label>
+      <input type="text" class="form-control" id="artist" placeholder="Artist" ng-model="music.artist">
+    </div>
+    <div class="form-group">
+      <label for="length">Length :</label>
+      <input type="text" class="form-control" id="length" placeholder="Length" ng-model="music.length">
+      
+    </div>
+
+    <input type="reset" style="color:#5bc0de;" class="btn btn-default" value="Clear">
+    <input type="submit" style="color:#5bc0de;" class="btn btn-default" value="Submit">
+
+</form>		
+    <div>

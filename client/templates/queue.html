@@ -1,0 +1,76 @@
+<div id="back"></div>
+<div ng-init="queue()">
+
+		<table>
+			
+			<thead>
+			<tr>		
+			<th></th>	  
+			  <th><div class="head"><div class="table-black">Song</div></div></th>
+			  <th><div class="head"><div class="table-black">Album</div></div></th>
+			  <th><div class="head"><div class="table-black">Length</div></div></th>
+			  <th><div class="head"><div class="table-black">Artist</div></div></th>
+			  <th></th>
+			  <th><div class="head"><div class="table-black">Add To</div></div></th>	
+			  <th></th>
+	
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="q in queue">
+			 <form>
+            		<td> <i id="pButton" class="material-icons" onclick="getMusic()"><div class="color">play_arrow</div></i> </td>
+
+        		</form>
+        		
+
+			  <td><input type="hidden" class="form-control" id="name"  ng-model="q.name" value="{{ q.name }}"/><div class="songs">{{ q.name }}</td>
+			  <td><a href="#/employees/music/{{q.album}}/album"><div class="albums"><a href="#/employees/{{q.album}}/album">{{ q.album }}</a></div></td>
+			  <td><input type="hidden" class="form-control" id="length"  ng-model="q.length" value="{{ q.length }}"/><div class="length">{{ q.length }}</td>
+			  			  <td><input type="hidden" class="form-control" id="artist"  ng-model="q.artist" value="{{ q.artist }}"/><div class="length"><a href="#/employees/{{q.artist}}/artist">{{ q.artist }}</a></td>
+
+			  <td> <input type="hidden"  class="form-control" ng-model="play.playlist" id="playlist" value=""/>
+			     <section>
+  					<form class="form-horizontal">
+    					<select class="form-control">
+    					  	<div ng-controller="empController">    	
+
+      						<option>Playlist</option>
+
+           				 	<option  ng-model="employee.playlist" ng-repeat="play in playlists" class="sidelist">{{play.playlist}}
+    						</option>
+     						 </div>
+    					</select>
+  					</form>
+				</section>
+
+
+          	  </td>
+          			    <!--<a href="#/employees/{{employee.playlist}}/show" class="btn btn-info"> Show  </a>-->
+          			<td>
+    					<a ng-click="addTo(m.name, m.album, m.artist, m.length, play.playlist)" class="btn btn-info">  Add </a>
+			  	
+			  		</td>
+						
+			</tr>
+			</tbody>
+		</table>	
+
+		
+ 	</div>   
+</div>
+</article>
+
+<script>
+function change(){
+  document.getElementById("playlist").value=document.getElementById("select").value;
+  alert(myselect.options[myselect.selectedIndex].value);
+}
+
+</script>
+
+<br>
+<br>
+<br>
+<br>

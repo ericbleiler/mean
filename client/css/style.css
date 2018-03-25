@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+
+body {
+    font:14px/1.3 Arial,sans-serif;
+    color:#000000;   
+    background:#2C3E50;
+    text-align:center;
+    margin:auto;
+}
+
+.form-style-8{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    margin-top:150px;
+    padding: 30px;        
+    background-color: #FFFFFF;
+    border: 1px solid #27A0A0;
+    /*margin: 50px auto;*/
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{    
+    background-color: #2980b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #2C3E50;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+.headerMargin{
+    margin-top:-200px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    color: #FFFFFF;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+.form-style-8 textarea{
+    resize:none;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"], 
+.form-style-8 input[type="submit"]{
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: #2980b9;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover, 
+.form-style-8 input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background-color:#34CACA;
+}
+.form-control{
+  max-width:200px;
+}
+.button-blue {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button-red {
+    background-color: #f44336; 
+    border: none;
+    color: white;
+    padding:12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+img{
+  width:100%;
+  height: 80%;
+}
+  #top {
+        width:100%;
+        height:70px;
+        padding-top:10px;
+        background-color: #2980b9;
+        position:fixed;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        opacity:.95;
+
+    }
+}
+}
+#follow {
+  
+}
+#audioplayer{
+    width: 50%;
+    height: 30px;
+    margin:auto;
+}
+
+
+
+#timeline{
+    width: 100%;
+    height: 20px;
+    margin:auto;
+    border-radius: 15px;
+    background: rgba(0,0,0,.3);
+  
+}
+#playhead{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background: rgba(0, 0, 0,1);
+
+}
+
+#imageSlider{
+  margin-top:20px;
+  height:400px;
+  width:80%;
+}
+.imageContainer {
+    margin-top:20px;
+    margin-bottom:45px;
+    width: 100%;
+    height: 120px;
+}
+
+/* resize images */
+.imageContainer img {
+    width: 80%;
+    height: auto;
+}
+
+    #main {
+
+        font-family: 'Roboto Condensed', serif;
+        min-height: 800px;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        flex-flow: row;
+    }
+ 
+    #main > article {     
+    
+        width:100%;        
+        margin-top:30px;
+        flex: 3 1 80%;
+        order: 2;
+    }
+
+   
+  
+
+    #main > aside {
+        min-width:150px;
+        max-width:200px;        
+        margin-top:60px;
+        background-color: #2980b9;
+        flex: 1 6 20%;
+        order: 1;
+        z-index:1;
+        opacity:.95;
+    }
+#nav{
+  margin-top:40px;
+  border-bottom:2px solid  #2980b9;
+}
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin:auto;
+}
+#nav li {
+display:inline-block;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    background-color:#2C3E50;
+}
+
+#nav li a:hover {
+    background-color: #111;
+}
+.flex-container {
+  margin-top:20px;
+  margin:auto;
+  max-width:1500px;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+   justify-content: center;
+  -webkit-flex-flow: row wrap;
+
+}
+.flex-content {
+    line-height:3;
+    background-color: #2980b9;
+    width: 200px;
+    height: 230px;
+    margin: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+
+
+.flex-charts {
+    line-height:2;
+    background-color: #2980b9;
+    width: 400px;
+    height: 250px;
+    margin: 10px;
+}
+
+
+.flex-side {
+
+  list-style: none;
+  margin-left:auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  
+
+  -webkit-flex-flow: row wrap;
+}
+.flex-side-item {
+	
+    margin:4px;
+}
+/* The website's style.css file is loaded as a jsFiddle Asset File */
+/* The following below includes previous CSS Rules and new rules to make it work. */
+
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin:auto;
+    margin-top:50px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    padding-left: 25px;
+    margin:10px;
+        border-bottom: 2px solid #2574A9;
+
+    background-color: #2980b9;
+    color: white;
+
+
+}
+th{
+  background-color:  #34495E;
+}
+
+
+#secondary  {
+    color:#FFF;
+    list-style:none;  /* This will place the number on top and inside of the current color of li */
+}
+ul li{
+    
+}
+
+.notes{
+    color:#333;
+    width: 230px;
+    height: 50px;
+    display: inline-block;
+    vertical-align:text-top;
+}
+
+
+@media screen and (max-width: 1000px) {
+ 
+}
+
+@media screen and (max-width: 835px) {
+.imageContainer {
+    margin-top:20px;
+    margin-bottom:15px;
+    width: 100%;
+    height: 120px;
+}
+}
+
+/*the content and its layout will change once the screen reaches 740px*/
+@media screen and (min-width: 550px) {
+
+
+ }
+@media screen and (max-width: 550px) {
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+     -webkit-flex-direction: column;
+   flex-direction: column;
+    width: 100%;
+}
+
+.flex-item {
+    line-height:2;
+    background-color: #2980b9;
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+}
+
+
+}
+@media screen and (max-width: 800px) {
+th:nth-child(3), th:nth-child(4) {
+   display: none
+} 
+td:nth-child(3), td:nth-child(4) {
+  display: none
+}
+
+ }
+
+
+@media screen and (max-width: 340px) {
+
+
+
+
+ }
+
+
+
+
+@media screen and (max-width: 1010px) {
+
+
+
+}

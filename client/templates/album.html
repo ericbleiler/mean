@@ -1,0 +1,87 @@
+<div id="back"></div>
+<div ng-init="album()">
+<div id="albumPage">
+	<aside>
+<div id="albumAlign" ng-repeat="a in albums">
+	<img src="images/{{a.name}}.jpg">
+	<div class="albumText" ><h1>{{a.name}}</h1>
+			    <a href="#/employees/{{a.artist}}/artist"><div class="head-h1"><div class="table">{{ a.artist }}</div></div></a><br>
+
+		    <a ng-click="addAlbum()" class="btn btn-info">  Save Album </a>
+		    <input type="hidden"  class="form-control" id="name" value="{{a.name}}"/>
+
+
+</div>
+
+</div>
+</aside>
+<article>
+		<table>
+			
+			<thead>
+			<tr>		
+			<th></th>	  
+			  <th><div class="head">Song</div></th>
+			  <th><div class="head">Length</div></th>
+			  <th><div class="head"></div></th>
+			  <th><div class="head">Add To</div></th>	
+			  <th></th>
+	
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="m in music">
+			 <form>
+            		<td> <i id="pButton" class="material-icons" onclick="getMusic()">play_arrow</i> </td>
+
+        		</form>
+        		
+
+			  <td><input type="hidden" class="form-control" id="name"  ng-model="m.name" value="{{ m.name }}"/><div class="songs">{{ m.name }}</td>
+			  <input type="hidden" class="album" value="{{m.album}}">
+			  <td><input type="hidden" class="form-control" id="length"  ng-model="m.length" value="{{ m.length }}"/><div class="length">{{ m.length }}</td>
+			  <td> <input type="hidden"  class="form-control" ng-model="play.playlist" id="playlist" value=""/>
+			     <section>
+  					<form class="form-horizontal">
+    					<select class="form-control">
+    					  	<div ng-controller="empController">    	
+
+      						<option>Playlist</option>
+
+           				 	<option  ng-model="employee.playlist" ng-repeat="play in playlists" class="sidelist">{{play.playlist}}
+    						</option>
+     						 </div>
+    					</select>
+  					</form>
+				</section>
+
+
+          	  </td>
+          			    <!--<a href="#/employees/{{employee.playlist}}/show" class="btn btn-info"> Show  </a>-->
+          			<td>
+    					<a ng-click="addTo(m.name, m.album, m.artist, m.length, play.playlist)" class="btn btn-info">  Add </a>
+			  	
+			  		</td>
+						
+			</tr>
+			</tbody>
+		</table>	
+
+		
+ 	</div>   
+</div>
+</article>
+
+<script>
+function change(){
+  document.getElementById("playlist").value=document.getElementById("select").value;
+  alert(myselect.options[myselect.selectedIndex].value);
+}
+
+</script>
+
+<br>
+<br>
+<br>
+<br>

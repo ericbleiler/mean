@@ -1,0 +1,24 @@
+
+
+  <div class="form-style-8">
+
+<h2 class="page-header">Add</h2>
+	<div class="panel-heading">
+	  
+	</div>
+  <div class="form-group">
+	<div class="panel-body">
+		<form ng-submit="addPlaylist()">
+    <div class="form-group">
+      <label for="user">User:</label>
+      <input type="text" class="form-control" id="user" placeholder="User" ng-model="playlists.user">
+    </div>
+    <div class="form-group">
+      <label for="playlist">Playlist:</label>
+      <input type="text" class="form-control" id="playlist" placeholder="Playlist" ng-model="playlists.playlist">
+    </div>
+    
+    <button type="submit" style="color:#5bc0de;" class="btn btn-default">Save</button>
+    <a href="#/employees" class="btn btn-default"> Cancel</a>
+</form>		
+    <div>
